@@ -49,6 +49,8 @@ h1, .section-heading h2 { font-family: Georgia, "Times New Roman", serif; font-w
 h1 { font-size: clamp(3.6rem, 8vw, 6.15rem); line-height: .96; margin-bottom: .95rem; }
 .paper-title { margin: 0 auto 1.1rem; max-width: 48rem; font-size: clamp(1.2rem, 2.7vw, 1.86rem); font-weight: 650; line-height: 1.24; letter-spacing: -.035em; }
 .authors { max-width: 57rem; margin: 0 auto; color: #314a3f; font-size: .96rem; }
+.author-row { display: block; }
+.author-name { display: inline-block; white-space: nowrap; }
 .authors sup, .equal-contribution sup { color: var(--green); margin-left: .08em; }
 .affiliations, .equal-contribution { font-size: .88rem; color: var(--muted); }
 .affiliations { margin-top: .4rem; }
