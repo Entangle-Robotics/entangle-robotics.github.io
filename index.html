@@ -6,24 +6,28 @@
   <meta name="description" content="Entangle learns robot behavior from human video. Explore real-robot and RoboTwin rollouts, Context-OOD transfer, and paired training data.">
   <title>Entangle · Human-Video In-Context World-Action Models</title>
   <link rel="icon" type="image/png" href="assets/entangle-mark.png">
-  <link rel="stylesheet" href="style.css?v=10">
+  <link rel="stylesheet" href="style.css?v=11">
   <script defer src="assets/library.js?v=13"></script>
-  <script defer src="app.js?v=6"></script>
+  <script defer src="app.js?v=7"></script>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
+  <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
   <header class="site-header">
     <div class="shell navbar">
       <a class="wordmark" href="#" aria-label="Entangle home"><img class="brand-mark" src="assets/entangle-mark.png" alt="" width="24" height="24">Entangle</a>
       <nav aria-label="Sections">
-        <a href="#demos">Task-OOD</a>
-        <a href="#context-ood">Context-OOD</a>
-        <a href="#additional-demos">Additional demos</a>
-        <a href="#robotwin">RoboTwin</a>
-        <a href="#dataset">Dataset</a>
-        <a href="#results">Results</a>
+        <a href="#demos" data-i18n="nav.task">Task-OOD</a>
+        <a href="#context-ood" data-i18n="nav.context">Context-OOD</a>
+        <a href="#additional-demos" data-i18n="nav.additional">Additional demos</a>
+        <a href="#robotwin" data-i18n="nav.robotwin">RoboTwin</a>
+        <a href="#dataset" data-i18n="nav.dataset">Dataset</a>
+        <a href="#results" data-i18n="nav.results">Results</a>
       </nav>
-      <a class="button paper-button" href="https://arxiv.org/pdf/2611.28732">Paper PDF</a>
+      <div class="header-actions">
+        <a class="button blog-button" data-blog-link data-i18n="cta.blog" href="https://www.motubrain.com/en/blog/motubrain-2/" target="_blank" rel="noopener">Tech Blog</a>
+        <a class="button paper-button" data-i18n="cta.paper" href="https://arxiv.org/pdf/2611.28732" target="_blank" rel="noopener">Paper PDF</a>
+        <button class="button lang-button" id="lang-toggle" type="button" aria-label="Switch language">中文</button>
+      </div>
     </div>
   </header>
   <main id="main">
@@ -31,7 +35,7 @@
       <div class="shell">
         <div class="hero-title">
           <h1 id="project-title">Entangle</h1>
-          <p class="paper-title">Scaling Human-Video In-Context World-Action Models across Unseen Tasks and Contexts</p>
+          <p class="paper-title" data-i18n="hero.subtitle">Scaling Human-Video In-Context World-Action Models across Unseen Tasks and Contexts</p>
           <p class="authors">
             <span class="author-row">
               <span class="author-name">Chendong Xiang<sup>*</sup>,</span>
@@ -48,13 +52,17 @@
               <span class="author-name">Jun Zhu</span>
             </span>
           </p>
-          <p class="affiliations">Tsinghua University, GensPI Technology, Motubrain</p>
-          <p class="equal-contribution"><sup>*</sup> Equal contribution</p>
+          <p class="affiliations" data-i18n="hero.affiliations">Tsinghua University, GensPI Technology, Motubrain</p>
+          <p class="equal-contribution" data-i18n-html="hero.equal"><sup>*</sup> Equal contribution</p>
+          <div class="hero-actions">
+            <a class="button paper-button" data-i18n="cta.paper" href="https://arxiv.org/pdf/2611.28732" target="_blank" rel="noopener">Paper PDF</a>
+            <a class="button blog-button" data-blog-link data-i18n="cta.blog_full" href="https://www.motubrain.com/en/blog/motubrain-2/" target="_blank" rel="noopener">Tech Blog (Motubrain 2.0)</a>
+          </div>
         </div>
         <div class="featured">
           <div class="featured-heading">
-            <h2>Sweep with a cup</h2>
-            <span>Task-OOD · Astribot S1</span>
+            <h2 data-i18n="featured.title">Sweep with a cup</h2>
+            <span data-i18n="featured.subtitle">Task-OOD · Astribot S1</span>
           </div>
           <div id="featured-player" class="player" aria-label="Featured demonstration"></div>
         </div>
@@ -62,15 +70,15 @@
     </section>
 
     <div class="shell stats" aria-label="Entangle in numbers">
-      <div><strong>83.5<span>/100</span></strong><p>Mean task score on Astribot S1</p></div>
-      <div><strong>69.52<span>%</span></strong><p>Success rate on RoboTwin</p></div>
-      <div><strong>21,269</strong><p>Paired episodes in Ent-Dataset</p></div>
+      <div><strong>83.5<span>/100</span></strong><p data-i18n="stats.s1">Mean task score on Astribot S1</p></div>
+      <div><strong>69.52<span>%</span></strong><p data-i18n="stats.robotwin">Success rate on RoboTwin</p></div>
+      <div><strong>21,269</strong><p data-i18n="stats.dataset">Paired episodes in Ent-Dataset</p></div>
     </div>
 
     <section class="shell section demos-section" id="demos" data-demo-group="task" aria-labelledby="demos-heading">
       <div class="section-heading">
-        <h2 id="demos-heading">Task-OOD</h2>
-        <p>Six Astribot S1 tasks test generalization to unseen goals and procedures.</p>
+        <h2 id="demos-heading" data-i18n="section.task.title">Task-OOD</h2>
+        <p data-i18n="section.task.desc">Six Astribot S1 tasks test generalization to unseen goals and procedures.</p>
       </div>
       <div class="demo-layout">
         <div class="demo-list" aria-label="Choose a Task-OOD demonstration"></div>
@@ -83,8 +91,8 @@
 
     <section class="shell section demos-section" id="context-ood" data-demo-group="context" aria-labelledby="context-heading">
       <div class="section-heading">
-        <h2 id="context-heading">Context-OOD</h2>
-        <p>Four scene changes test whether the robot can transfer the demonstrated interaction.</p>
+        <h2 id="context-heading" data-i18n="section.context.title">Context-OOD</h2>
+        <p data-i18n="section.context.desc">Four scene changes test whether the robot can transfer the demonstrated interaction.</p>
       </div>
       <div class="demo-layout">
         <div class="demo-list" aria-label="Choose a Context-OOD demonstration"></div>
@@ -97,8 +105,8 @@
 
     <section class="shell section demos-section" id="additional-demos" data-demo-group="additional" aria-labelledby="additional-heading">
       <div class="section-heading">
-        <h2 id="additional-heading">Additional demos</h2>
-        <p>Generated context, object-free imitation, and InfoNCE ablations.</p>
+        <h2 id="additional-heading" data-i18n="section.additional.title">Additional demos</h2>
+        <p data-i18n="section.additional.desc">Generated context, object-free imitation, and InfoNCE ablations.</p>
       </div>
       <div class="demo-layout">
         <div class="demo-list" aria-label="Choose an additional demonstration"></div>
@@ -111,8 +119,8 @@
 
     <section class="shell section demos-section" id="robotwin" data-demo-group="robotwin" aria-labelledby="robotwin-heading">
       <div class="section-heading">
-        <h2 id="robotwin-heading">RoboTwin Simulation</h2>
-        <p>One successful rollout from each of the seven held-out RoboTwin tasks. Mean success across the full evaluation is <strong>69.52%</strong> over three seeds.</p>
+        <h2 id="robotwin-heading" data-i18n="section.robotwin.title">RoboTwin Simulation</h2>
+        <p data-i18n-html="section.robotwin.desc">One successful rollout from each of the seven held-out RoboTwin tasks. Mean success across the full evaluation is <strong>69.52%</strong> over three seeds.</p>
       </div>
       <div class="demo-layout">
         <div class="demo-list" aria-label="Choose a RoboTwin task"></div>
@@ -126,7 +134,7 @@
     <section class="dataset-section" id="dataset" aria-labelledby="dataset-heading">
       <div class="shell section">
         <div class="section-heading">
-          <div><h2 id="dataset-heading">Ent-Dataset</h2><p>Paired human and robot sequences capture the same manipulations. Each tile shows six moments from a training pair.</p></div>
+          <div><h2 id="dataset-heading" data-i18n="section.dataset.title">Ent-Dataset</h2><p data-i18n="section.dataset.desc">Paired human and robot sequences capture the same manipulations. Each tile shows six moments from a training pair.</p></div>
         </div>
         <div class="dataset-toolbar">
           <div class="composition">
@@ -134,15 +142,15 @@
               <span class="source-real"></span><span class="source-astr"></span><span class="source-agi"></span>
             </div>
             <div class="composition-legend">
-              <span><i class="source-real"></i>5,260 real</span>
-              <span><i class="source-astr"></i>9,227 Astribot synthetic</span>
-              <span><i class="source-agi"></i>6,782 AgiBot synthetic</span>
+              <span><i class="source-real"></i><span data-i18n="dataset.legend.real">5,260 real</span></span>
+              <span><i class="source-astr"></i><span data-i18n="dataset.legend.astr">9,227 Astribot synthetic</span></span>
+              <span><i class="source-agi"></i><span data-i18n="dataset.legend.agi">6,782 AgiBot synthetic</span></span>
             </div>
           </div>
           <div class="segmented" id="dataset-groups" aria-label="Filter training examples">
-            <button type="button" data-group="all" aria-pressed="true">All pairs</button>
-            <button type="button" data-group="real" aria-pressed="false">Real</button>
-            <button type="button" data-group="synthetic" aria-pressed="false">Synthetic</button>
+            <button type="button" data-group="all" aria-pressed="true" data-i18n="dataset.filter.all">All pairs</button>
+            <button type="button" data-group="real" aria-pressed="false" data-i18n="dataset.filter.real">Real</button>
+            <button type="button" data-group="synthetic" aria-pressed="false" data-i18n="dataset.filter.synthetic">Synthetic</button>
           </div>
         </div>
         <div id="dataset-mosaic" class="mosaic" aria-label="Paired dataset frame mosaic"></div>
@@ -151,24 +159,27 @@
 
     <section class="shell section results-section" id="results" aria-labelledby="results-heading">
       <div class="section-heading">
-        <div><h2 id="results-heading">Real-robot data scaling</h2><p>Mean task scores rise from 40.8 to 83.5 as the paired continued-training data grows from 10% to the full pool.</p></div>
+        <div><h2 id="results-heading" data-i18n="section.results.title">Real-robot data scaling</h2><p data-i18n="section.results.desc">Mean task scores rise from 40.8 to 83.5 as the paired continued-training data grows from 10% to the full pool.</p></div>
       </div>
       <div class="results-layout">
         <figure class="result-chart">
           <img src="assets/scaling.webp" alt="Real-robot task scores at 0, 10, 25, 50, and 100 percent of the continued-training dataset. Mean scores are 0, 40.8, 53.7, 66.8, and 83.5." loading="lazy" width="880" height="427">
-          <figcaption>Six real-robot tasks, 10 trials per task and configuration.</figcaption>
+          <figcaption data-i18n="results.figcaption">Six real-robot tasks, 10 trials per task and configuration.</figcaption>
         </figure>
         <div class="result-copy">
-          <h3>Aligned data improves task following</h3>
-          <p>Entangle learns joint video–action prediction from temporally aligned human and robot sequences. At deployment, a human video specifies the procedure and the robot replans from its current observations.</p>
-          <a class="button paper-button" href="https://arxiv.org/pdf/2611.28732">Read the paper</a>
+          <h3 data-i18n="results.copy.title">Aligned data improves task following</h3>
+          <p data-i18n="results.copy.body">Entangle learns joint video–action prediction from temporally aligned human and robot sequences. At deployment, a human video specifies the procedure and the robot replans from its current observations.</p>
+          <div class="result-actions">
+            <a class="button paper-button" data-i18n="cta.read_paper" href="https://arxiv.org/pdf/2611.28732" target="_blank" rel="noopener">Read the paper</a>
+            <a class="button blog-button" data-blog-link data-i18n="cta.read_blog" href="https://www.motubrain.com/en/blog/motubrain-2/" target="_blank" rel="noopener">Read tech blog</a>
+          </div>
         </div>
       </div>
     </section>
     <section class="shell section citation-section" id="citation" aria-labelledby="citation-heading">
       <div class="section-heading citation-heading">
-        <h2 id="citation-heading">Citation</h2>
-        <button class="button citation-copy" id="copy-bibtex" type="button" aria-live="polite">Copy BibTeX</button>
+        <h2 id="citation-heading" data-i18n="section.citation.title">Citation</h2>
+        <button class="button citation-copy" id="copy-bibtex" type="button" aria-live="polite" data-i18n="citation.copy">Copy BibTeX</button>
       </div>
       <pre class="citation-code"><code id="citation-bibtex">@misc{xiang2026entanglescalinghumanvideoincontext,
   title={Entangle: Scaling Human-Video In-Context World-Action Models across Unseen Tasks and Contexts},
@@ -182,13 +193,19 @@
     </section>
   </main>
   <footer class="site-footer">
-    <div class="shell footer-row"><span class="wordmark"><img class="brand-mark" src="assets/entangle-mark.png" alt="" width="24" height="24">Entangle</span><a href="https://arxiv.org/pdf/2611.28732">Paper PDF</a></div>
+    <div class="shell footer-row">
+      <span class="wordmark"><img class="brand-mark" src="assets/entangle-mark.png" alt="" width="24" height="24">Entangle</span>
+      <div class="footer-links">
+        <a data-blog-link data-i18n="cta.blog" href="https://www.motubrain.com/en/blog/motubrain-2/" target="_blank" rel="noopener">Tech Blog</a>
+        <a data-i18n="cta.paper" href="https://arxiv.org/pdf/2611.28732" target="_blank" rel="noopener">Paper PDF</a>
+      </div>
+    </div>
   </footer>
 
   <dialog id="pair-dialog" aria-labelledby="pair-dialog-title">
     <div class="dialog-heading">
       <div><h2 id="pair-dialog-title"></h2><p id="pair-dialog-kind"></p></div>
-      <button id="close-pair" type="button">Close</button>
+      <button id="close-pair" type="button" data-i18n="dialog.close">Close</button>
     </div>
     <div id="dataset-player" class="player"></div>
   </dialog>
